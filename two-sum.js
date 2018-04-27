@@ -1,5 +1,6 @@
 /**
- *  @license https://leetcode.com
+ *  @Problem license https://leetcode.com
+ *  @author Merchuli
 
 	Problem
 	1. Two Sum
