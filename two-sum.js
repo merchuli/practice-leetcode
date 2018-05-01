@@ -1,5 +1,5 @@
 /**
- *  @Problem license https://leetcode.com
+ *  @Problem license LeetCode
  *  @author Merchuli
 
 	Problem
