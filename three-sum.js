@@ -1,7 +1,9 @@
 /**
- *  @Problem license LeetCode
- *  @Problem Link https://leetcode.com/problems/3sum/description/
- *  @author Merchuli
+ * @Problem license LeetCode
+
+ * @Problem Link https://leetcode.com/problems/3sum/description/
+
+ * @author Merchuli
 
     Problem
     1. Three Sum
@@ -22,7 +24,13 @@
       [-1, 0, 1],
       [-1, -1, 2]
     ]
- */
+
+    Solution:
+
+    1. Use ES6, https://leetcode.com/problems/3sum/discuss/119721/Clean-Javascript-solution-O(N2)-with-two-pointers
+    2. Use js, 但有時候也會出現 TLE,  https://leetcode.com/problems/3sum/discuss/7648/Javascript-solution-beats-100
+
+     */
 
 /**
  * @param {number[]} nums
@@ -50,23 +58,24 @@ var threeSum = function(nums) {
         return a - b;
     });
     
-    /** Record the previous one, avoid duplication */
-    var prev = sortedNums[0];
     for (var i = 0; i < len - 2 ; i++) {
         if (sortedNums[i] > 0 ) {
             break;
         }
 
-        /** 確認是否跟前一個相同 */
-        if (i !== 0 && sortedNums[i] === prev) {
+        /** 確認是否跟前一次相同 */
+        if (i !== 0 && sortedNums[i] === sortedNums[i-1]) {
             continue;
-        } else {
-            prev = sortedNums[i];
         }
-
+    
         for (var j = len -1 ; j > i ; j--) {
             if (sortedNums[j] < 0) {
                 break;
+            }
+            
+            /** 確認是否跟前一次相同 */
+            if (j !== (len-1) && sortedNums[j] === sortedNums[j+1]) {
+                continue;
             }
             
             var target = 0;
