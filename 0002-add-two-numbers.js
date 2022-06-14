@@ -88,7 +88,52 @@
 
 
 /**
- * @Result
+ * @Result 1
  * Runtime: 153 ms, faster than 43.89% of JavaScript online submissions for Add Two Numbers.
  * Memory Usage: 47.1 MB, less than 69.88% of JavaScript online submissions for Add Two Numbers.
+ */
+
+
+/** ====================================================== */
+/**
+ * @Optimization
+ * Use dummy head
+ */
+
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
+ var addTwoNumbers2 = function(l1, l2) {
+    let dummyHead = new ListNode(0);
+    let currentNode = dummyHead;
+    let currentL1 = l1;
+    let currentL2 = l2;
+    let carry = 0;
+    while (currentL1 || currentL2) {
+        const value1 = currentL1 ? currentL1.val : 0;
+        const value2 = currentL2 ? currentL2.val : 0;
+        const remainder = (value1 + value2 + carry) % 10;
+        carry = Math.floor((value1 + value2 + carry) / 10);
+        
+        const nextNode = new ListNode(remainder);
+        currentNode.next = nextNode;
+        currentNode = nextNode;
+        currentL1 = currentL1 ? currentL1.next : currentL1;
+        currentL2 = currentL2 ? currentL2.next : currentL2;  
+    }
+    
+    if (carry > 0) {
+        currentNode.next = new ListNode(carry);
+    }
+    
+    return dummyHead.next;
+};
+
+
+/**
+ * @Result 2
+ * Runtime: 165 ms, faster than 34.67% of JavaScript online submissions for Add Two Numbers.
+ * Memory Usage: 46.6 MB, less than 95.53% of JavaScript online submissions for Add Two Numbers.
  */
