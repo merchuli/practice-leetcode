@@ -1,11 +1,9 @@
 /**
  * @Problem license LeetCode
-
- * @Problem Link https://leetcode.com/problems/sample-problem/
-
- * @author Merchuli
-
-	Description of the problem
+ * @ProblemLink https://leetcode.com/problems/sample-problem/
+ * @author Merchu
+ * @Description
+ * Description of the problem.
  */
 
 
@@ -27,6 +25,9 @@ const testcase4 = [0,0,0,1];
 let testcase = testcase1;
 getLength(testcase);
 
-// Comment
-// Runtime: xx ms, faster than xx.xx% of JavaScript online submissions for Sample Problem.
-// Memory Usage: xx MB, less than xx.xx% of JavaScript online submissions for Sample Problem.
+/**
+ * @TimeComplexity
+ * @SpaceComplexity
+ * @Runtime xx ms, beats xx.xx%
+ * @Memory xx MB, beats xx.xx%
+ */
